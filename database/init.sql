@@ -1,0 +1,5 @@
+CREATE TABLE IF NOT EXISTS todo (
+    id SERIAL PRIMARY KEY,
+    task VARCHAR(200) NOT NULL,
+    due_date DATE NOT NULL
+);
