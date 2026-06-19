@@ -49,7 +49,7 @@ pipeline {
             steps {
                 sh '''
                     sleep 20
-                    code=$(curl -s -o /dev/null -w "%{http_code}" http://${APP_IP}/)
+                    code=$(curl -s -o /dev/null -w "%{http_code}" http://${APP_IP}:8080/)
                     echo "Homepage returned HTTP $code"
                     test "$code" = "200"
                 '''
@@ -58,7 +58,7 @@ pipeline {
     }
 
     post {
-        success { echo "Deployed. App live at http://${APP_IP}/" }
+        success { echo "Deployed. App live at http://${APP_IP}:8080/" }
         failure { echo "Failed — check the stage logs above" }
     }
 }
