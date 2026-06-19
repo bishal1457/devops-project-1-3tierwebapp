@@ -2,11 +2,13 @@ pipeline {
     agent any
 
     environment {
-        APP_HOST   = "deploy@10.0.0.20"      // <-- your app server user@ip
-        APP_IP     = "10.0.0.20"
-        DEPLOY_DIR = "/home/deploy/todoapp"
-        COMPOSE    = "docker-compose -p mytodoapp"   // use 'docker compose' if on v2
+        APP_HOST   = "ubuntu@192.168.56.105"
+        APP_IP     = "192.168.56.105"
+        DEPLOY_DIR = "/home/ubuntu/todoapp"
+        COMPOSE    = "docker-compose -p mytodoapp"
     }
+
+    
 
     stages {
         stage('Checkout') {
