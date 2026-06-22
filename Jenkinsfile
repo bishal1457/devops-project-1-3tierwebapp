@@ -2,15 +2,15 @@ pipeline {
     agent any
 
     environment {
-        APP_HOST   = "ubuntu@192.168.56.106"
-        APP_IP     = "192.168.56.106"
+        APP_HOST   = "vagrant@192.168.56.102"
+        APP_IP     = "192.168.56.102"
         DEPLOY_DIR = "/home/ubuntu/todoapp"
         COMPOSE    = "docker compose -p mytodoapp"
     }
 
     // Add this triggers block to listen for git webhooks
-    triggers {
-        githubPush() // Use upstream() or gitlab() if not using GitHub
+   // triggers {
+     //   githubPush() // Use upstream() or gitlab() if not using GitHub
     }
 
     stages {
