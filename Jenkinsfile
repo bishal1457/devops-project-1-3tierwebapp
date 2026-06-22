@@ -4,7 +4,7 @@ pipeline {
     environment {
         APP_HOST   = "vagrant@192.168.56.102"
         APP_IP     = "192.168.56.102"
-        DEPLOY_DIR = "/home/ubuntu/todoapp"
+        DEPLOY_DIR = "/home/vagrant/todoapp"
         COMPOSE    = "docker compose -p mytodoapp"
     }
 
